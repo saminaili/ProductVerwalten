@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="leyout">
+<head >
+<meta charset="utf-8"/>
+<title>Produit</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div layout:fragment="content" >
+<br><br><br><br>
+
+<div class="container" >
+<form th:action="@{/user/index}" method="get">
+
+<label>Mot cle</label>
+<input type="text" name="motcle" th:value="${motcle}"/>
+<button class="btn btn-primary" >Chercher
+</button>
+
+
+</form>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="container">
+<h3>Liste De Produits</h3>
+
+
+
+
+<table class="table">
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Designation</th>
+<th>Prix</th>
+<th>Quantite</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="p:${listProduits}">
+<td th:text="${p.id}"></td>
+<td th:text="${p.designation}"></td>
+<td th:text="${p.prix}"></td>
+<td th:text="${p.quantite}"></td>
+<td><a onclick=" return confirm('OoPs Etes vous Sure???')"   th:href="@{/admin/delete(id=${p.id},page=${pageCourante},size=${size},motcle=${motcle})}">Delete</a></td>
+<td><a  th:href="@{/admin/edit(id=${p.id})}">Editer</a></td>
+</tr>
+
+</tbody>
+
+
+
+</table>
+
+</div>
+<div class="container">
+<ul class="nav nav-pills">
+<li          th:class="${pageCourante}==${status.index}?'active':''"            th:each="pa,status:${pages}" >
+<a th:href="@{/user/index(page=${status.index},size=${s},motcle=${motcle})}" th:text="${status.index}"></a>
+</li>
+
+</ul>
+
+
+</div>
+
+</div>
+
+
+</body>
+</html>

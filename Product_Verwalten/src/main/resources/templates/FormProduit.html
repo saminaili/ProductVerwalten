@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="leyout"
+
+>
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Produit</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<br><br>
+<div class="container" layout:fragment="content">
+<div  class="panel panel-default">
+<div class="panel-heading">Siasie un Produit</div>
+
+
+
+<div class="panel-body">
+
+<form th:action="@{/admin/save}" method="post">
+<div class="form-group">
+<label class= "control-label"> Designation</label>
+<input class="form-control" type="text" name ="designation" th:value="${produit.designation}"/>
+
+</div>
+<div class="form-group">
+<label class= "control-label"> prix</label>
+
+<input class="form-control" type="text" name ="prix" th:value="${produit.prix}"/>
+</div>
+<div class="form-group">
+<label class= "control-label"> Quantite</label>
+<input class="form-control" type="text" name ="quantite" th:value="${produit.quantite}"/>
+</div>
+<div>
+<button type="submit" class="btn btn-primary">Save</button>
+</div>
+
+</form>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

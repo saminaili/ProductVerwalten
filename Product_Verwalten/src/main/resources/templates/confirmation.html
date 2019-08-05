@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Produit</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+<div class="panel panel-default">
+<div class="panel-heading ">Confirmation</div>
+
+</div>
+<div class="panel-body">
+<div class="form-group">
+<label>id</label>
+<label th:text="${produit.id}"></label>
+</div>
+<div class="form-group">
+<label>Designation</label>
+<label th:text="${produit.designation}"></label>
+</div>
+<div class="form-group">
+<label>prix</label>
+<label th:text="${produit.prix}"></label>
+</div>
+
+<div class="form-group">
+<label>Quantite</label>
+<label th:text="${produit.quantite}"></label>
+</div>
+
+
+
+</div>
+
+</div>
+
+
+</body>
+</html>
